@@ -4,3 +4,6 @@
 *.vscode
 *.json
 client-test.dSYM
+*template
+.plist
+*Info.plist
