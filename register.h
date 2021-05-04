@@ -3,7 +3,7 @@
 
 #include <string>
 #include "address.h"
-//TODO: *HIGH PRIORITY* change this class to people in order to have a base class for inheriting buyer class and seller class
+
 namespace auction_manager
 {
     // Manages all Registers data
@@ -21,12 +21,12 @@ namespace auction_manager
         // account balance: unsigned int (Balance can't be negative!)
     class Register
     {
-//Attributes
+
         std::string full_name_;
         unsigned long int id_number_;
         Address address_;
         unsigned long int cell_number_;
-        unsigned long int account_balance_;
+        
 
     public:    
 //Constructors
@@ -38,12 +38,11 @@ namespace auction_manager
         void set_name(const std::string new_full_name);
         void set_id(const unsigned long int new_id_number);
         void set_cell_number(const unsigned long int new_cell_number);
-        void set_account_balance(const unsigned long int new_account_balance);
 //get methods
         std::string get_name() const;
         unsigned long int get_id() const;
         unsigned long int get_cell_number() const;
-        unsigned long int get_account_balance() const;
+        
 // Auxiliary methods
         std::string show_address_street() const;
         unsigned int show_address_number() const;

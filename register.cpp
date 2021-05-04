@@ -7,12 +7,11 @@ namespace auction_manager
     {
         std::cout << "Register: Default Constructor called" << std::endl;
     }
-    Register::Register(const Register& copy_Register) : full_name_(copy_Register.full_name_), id_number_(copy_Register.id_number_),address_(copy_Register.address_), cell_number_(copy_Register.cell_number_),account_balance_(copy_Register.account_balance_)
-    {
+    Register::Register(const Register& copy_Register) : full_name_(copy_Register.full_name_), id_number_(copy_Register.id_number_),address_(copy_Register.address_), cell_number_(copy_Register.cell_number_),account_balance_(copy_Register.account_balance_) // FIXME: account balance elongs to buyers and auctioneers, not to registers
         std::cout << "Register: Copy Constructor called" << std::endl;
     };
 
-    Register::Register(std::string full_name, unsigned long int id_number, const Address& address, unsigned long int cell_number) : full_name_(full_name), id_number_(id_number),address_(address), cell_number_(cell_number),account_balance_(0)
+    Register::Register(std::string full_name, unsigned long int id_number, const Address& address, unsigned long int cell_number) : full_name_(full_name), id_number_(id_number),address_(address), cell_number_(cell_number),account_balance_(0) // FIXME: account balance elongs to buyers and auctioneers, not to registers
     {
         std::cout << "Register: Constructor called" << std::endl;
     };
@@ -27,13 +26,13 @@ namespace auction_manager
 
     void Register::set_id(const unsigned long int new_id_number) {id_number_ = new_id_number;};
     void Register::set_cell_number(const unsigned long int new_cell_number){cell_number_ = new_cell_number;};
-    void Register::set_account_balance(const unsigned long int new_account_balance) {account_balance_ = new_account_balance;};
+    void Register::set_account_balance(const unsigned long int new_account_balance) {account_balance_ = new_account_balance;}; //FIXME: this method belongs to buyers and auctioneers, not to registers
 
 //get methods
     std::string Register::get_name() const {return full_name_;};
     unsigned long int Register::get_id() const {return id_number_;};
     unsigned long int Register::get_cell_number() const {return cell_number_;};
-    unsigned long int Register::get_account_balance() const {return account_balance_;};
+    unsigned long int Register::get_account_balance() const {return account_balance_;}; //FIXME: this method belongs to buyers and auctioneers, not to registers
 
 // Auxiliary methods
     std::string Register::show_address_street() const {return address_.get_street();}
