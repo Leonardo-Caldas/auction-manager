@@ -1,3 +1,6 @@
 *test
 *test.cpp
 *.txt
+*.vscode
+*.json
+client-test.dSYM
