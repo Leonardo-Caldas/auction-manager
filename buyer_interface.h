@@ -1,0 +1,1 @@
+// TODO: this is the interface for the clients, has capabilities for signing up clients or singing in, search for products and auctions data. Make bids, transfer money. Should be a simple menu whre each number listed takes one action.

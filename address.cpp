@@ -43,18 +43,18 @@ namespace auction_manager
         state_.replace(state_.begin(),state_.end(),new_address.state_);
         country_.replace(country_.begin(),country_.end(),new_address.country_);
     };  
-    void Address::set_street(std::string new_street) {street_.replace(street_.begin(),street_.end(),new_street);}; 
-    void Address::set_number(unsigned int new_number) {number_ = new_number;}; 
-    void Address::set_zip_code(unsigned long int new_zip_code) {zip_code_ = new_zip_code;}; 
-    void Address::set_city(std::string new_city) {city_.replace(city_.begin(),city_.end(),new_city);}; 
-    void Address::set_state(std::string new_state) {state_.replace(state_.begin(),state_.end(),new_state);}; 
-    void Address::set_country(std::string new_country) {country_.replace(country_.begin(),country_.end(),new_country);}; 
+    void Address::set_street(const std::string new_street) {street_.replace(street_.begin(),street_.end(),new_street);}; 
+    void Address::set_number(const unsigned int new_number) {number_ = new_number;}; 
+    void Address::set_zip_code(const unsigned long int new_zip_code) {zip_code_ = new_zip_code;}; 
+    void Address::set_city(const std::string new_city) {city_.replace(city_.begin(),city_.end(),new_city);}; 
+    void Address::set_state(const std::string new_state) {state_.replace(state_.begin(),state_.end(),new_state);}; 
+    void Address::set_country(const std::string new_country) {country_.replace(country_.begin(),country_.end(),new_country);}; 
 // get methods
-    std::string Address::get_street() {return street_;}; 
-    unsigned int Address::get_number() {return number_;}; 
-    unsigned long int Address::get_zip_code() {return zip_code_;}; 
-    std::string Address::get_city() {return city_;}; 
-    std::string Address::get_state() {return state_;}; 
-    std::string Address::get_country() {return country_;} 
+    std::string Address::get_street() const {return street_;}; 
+    unsigned int Address::get_number() const {return number_;}; 
+    unsigned long int Address::get_zip_code() const {return zip_code_;}; 
+    std::string Address::get_city() const {return city_;}; 
+    std::string Address::get_state() const {return state_;}; 
+    std::string Address::get_country() const {return country_;} 
 
 } // namespace_auction manager

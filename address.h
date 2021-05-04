@@ -31,19 +31,19 @@ namespace auction_manager
 //set methods
         void set_address(std::string new_street, unsigned int new_number, unsigned long int new_zip_code, std::string new_city, std::string new_state, std::string new_country);
         void set_address(const Address& new_address);
-        void set_street(std::string new_street);
-        void set_number(unsigned int new_number);
-        void set_zip_code(unsigned long int new_zip_code);
-        void set_city(std::string new_city);
-        void set_state(std::string new_state); 
-        void set_country(std::string new_country);
+        void set_street(const std::string new_street);
+        void set_number(const unsigned int new_number);
+        void set_zip_code(const unsigned long int new_zip_code);
+        void set_city(const std::string new_city);
+        void set_state(const std::string new_state); 
+        void set_country(const std::string new_country);
 //get methods 
-        std::string get_street(); 
-        unsigned int get_number(); 
-        unsigned long int get_zip_code(); 
-        std::string get_city(); 
-        std::string get_state(); 
-        std::string get_country(); 
+        std::string get_street() const ; 
+        unsigned int get_number() const; 
+        unsigned long int get_zip_code() const; 
+        std::string get_city() const; 
+        std::string get_state() const; 
+        std::string get_country() const; 
     };
 } // namespace auction_manager
 #endif // ADDRESS_H
