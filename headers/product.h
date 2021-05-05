@@ -20,19 +20,27 @@ namespace auction_manager
         Address address_; //location where it is stored
 
     public:
-//Constructors // TODO: implement constructors
+//Constructors 
         explicit Product();
         Product(unsigned long int id_code, std::string name, double cost_price, double first_bid, std::string description, std::string category, std::string brand, Address address);
         Product(const Product& copy_product);
         ~Product();
-//set methods // TODO: implement 
+//set methods /
         void set_id_code(const unsigned long int id_code);
         void set_name(const std::string name);
         void set_cost_price(const double cost_price);
         void set_first_bid(const double first_bid);
         void set_description(const std::string description);
         
-//get methods // TODO: implement
+//get methods 
+        const unsigned long int get_id_code();
+        const std::string get_name();
+        const double get_cost_price();
+        const double get_first_bid();
+        const std::string get_description();
+        const std::string get_category(); 
+        const std::string get_brand();
+        const Address get_address(); //location where it is stored
 
 // Auxiliary methods
         std::string show_address_street() const;
@@ -42,7 +50,7 @@ namespace auction_manager
         std::string show_address_state() const;
         std::string show_address_country() const;
         void change_address(std::string new_street, unsigned int new_number, unsigned long int new_zip_code, std::string new_city, std::string new_state, std::string new_country);
-        void change_address(const Address& new_address);
+        void change_address(const Address& new_address); // todo: maybe this should be named set_address
         void change_address_street(const std::string& new_street);
         void change_address_number(const unsigned int& new_number);
         void change_address_zip_code(const unsigned int& new_zip_code);

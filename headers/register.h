@@ -7,7 +7,6 @@
 namespace auction_manager
 {
     // Manages all Registers data
-    // Store and manipulate all Register data:
         // full name: string
         // id number(only numbers): unsigned int
         // address:

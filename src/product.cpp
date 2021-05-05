@@ -8,23 +8,38 @@ namespace auction_manager
     {
         std::cout << "Product: Default Constructor called" << std::endl;
     }
+
     Product::Product(unsigned long int id_code, std::string name, double cost_price, double first_bid, std::string description, std::string category, std::string brand, Address address) : id_code_(id_code), name_(name), cost_price_(cost_price), first_bid_(first_bid), description_(description), category_(category), brand_(brand), address_(address)
     {
         std::cout << "Product: Constructor called" << std::endl;
     }
+
     Product::Product(const Product& copy_product) : id_code_(copy_product.id_code_), name_(copy_product.name_), cost_price_(copy_product.cost_price_), first_bid_(copy_product.first_bid_), description_(copy_product.description_), category_(copy_product.category_), brand_(copy_product.brand_), address_(copy_product.address_)
     {
         std::cout << "Product: Copy Constructor called" << std::endl;
     }
+
     Product::~Product()
     {
         std::cout << "Product: Destructor called" << std::endl;
     }
 //set methods // TODO: implement
-    
+    void Product::set_id_code(const unsigned long int id_code) {id_code_ = id_code;}
+    void Product::set_name(const std::string name) {name_.replace(name_.begin(),name_.end(),name);}
+    void Product::set_cost_price(const double cost_price) {cost_price_ = cost_price;}
+    void Product::set_first_bid(const double first_bid) {first_bid_ = first_bid;}
+    void Product::set_description(const std::string description) {description_.replace(description_.begin(),description_.end(),description);}
 
 //get methods // TODO: implement
-
+    const unsigned long int Product::get_id_code() {return id_code_;}
+    const std::string Product::get_name() {return name_;}
+    const double Product::get_cost_price() {return cost_price_;}
+    const double Product::get_first_bid() {return first_bid_;}
+    const std::string Product::get_description() {return description_;}
+    const std::string Product::get_category() {return category_;}
+    const std::string Product::get_brand() {return brand_;}
+    const Address Product::get_address() {return address_;}
+    
 // Auxiliary methods // TODO: verify, this was copy-pasted from Client
     std::string Product::show_address_street() const {return address_.get_street();}
     unsigned int Product::show_address_number() const {return address_.get_number();}
