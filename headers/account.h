@@ -9,13 +9,15 @@ namespace auction_manager
         double balance_;
 
     public:
-//Constructors // TODO: implement constructors
-        Account();
+//Constructors
+        explicit Account();
+        Account(double balance);
+        Account(Account& account_copy);
         ~Account();
-//set methods // TODO: implement 
+//set methods
         void set_balance(const double new_balance);
-//get methods // TODO: implement
-        const double get_balance();
+//get methods
+        double get_balance();
         
     };
 

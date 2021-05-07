@@ -13,20 +13,20 @@ namespace auction_manager
 
     public:
 //Constructors
-        BuyerRegister(); // TODO: implement
-        ~BuyerRegister(); // TODO: implement
+        explicit BuyerRegister();
+        BuyerRegister(const std::string& full_name, const unsigned long int& id_number,const Address& address, const unsigned long int& cell_number, const unsigned long balance);
+        BuyerRegister(const BuyerRegister& copy_buyer_register);
+        ~BuyerRegister();
 
 //set methods
-        
 
 //get methods
 
 // Auxiliary methods
-        void add_funds(const double);// todo: method that "adds funds"
-        void make_payment(const double);// todo: mwthod that makes payments
+        void add_funds(const double fund);
+        void make_payment(const double debt);
+        double get_balance();//print current balance
     };
 } //namespace auction_manager
-
-
 
 #endif // BUYER_REGISTER_H

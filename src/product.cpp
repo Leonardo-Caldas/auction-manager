@@ -25,10 +25,10 @@ namespace auction_manager
     }
 //set methods // TODO: implement
     void Product::set_id_code(const unsigned long int id_code) {id_code_ = id_code;}
-    void Product::set_name(const std::string name) {name_.replace(name_.begin(),name_.end(),name);}
+    void Product::set_name(const std::string name) {name_ = name;}
     void Product::set_cost_price(const double cost_price) {cost_price_ = cost_price;}
     void Product::set_first_bid(const double first_bid) {first_bid_ = first_bid;}
-    void Product::set_description(const std::string description) {description_.replace(description_.begin(),description_.end(),description);}
+    void Product::set_description(const std::string description) {description_ = description;}
 
 //get methods // TODO: implement
     const unsigned long int Product::get_id_code() {return id_code_;}

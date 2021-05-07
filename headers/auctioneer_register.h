@@ -2,7 +2,7 @@
 #define AUCTIONEER_REGISTER_H
 
 #include "buyer_register.h"
-namespace auction_manager
+namespace auction_manager //todo: implement after Account and BuyerRegister are complete
 {
     /*
     in order to be a auctioneer you must be a buyer.

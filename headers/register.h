@@ -30,19 +30,20 @@ namespace auction_manager
     public:    
 //Constructors
         explicit Register();
-        Register(std::string full_name, unsigned long int id_number,const Address& address, unsigned long int cell_number);
+        Register(const std::string& full_name, const unsigned long int& id_number,const Address& address, const unsigned long int& cell_number);
         Register(const Register& copy_Register);
         ~Register();
 //set methods
-        void set_name(const std::string new_full_name);
-        void set_id(const unsigned long int new_id_number);
-        void set_cell_number(const unsigned long int new_cell_number);
+        void set_name(const std::string& new_full_name);
+        void set_id(const unsigned long int& new_id_number);
+        void set_cell_number(const unsigned long int& new_cell_number);
 //get methods
         std::string get_name() const;
         unsigned long int get_id() const;
         unsigned long int get_cell_number() const;
         
 // Auxiliary methods
+        Address show_address() const;
         std::string show_address_street() const;
         unsigned int show_address_number() const;
         unsigned long int show_address_zip_code() const;

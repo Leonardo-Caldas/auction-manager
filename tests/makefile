@@ -1,24 +1,28 @@
 #This makefile was tested on a OSX 11.2.3
 #Apple clang version 12.0.0 (clang-1200.0.32.29)
 #GNU Make 3.81
-src = /Users/leleo/Documents/prog 3/auction-manager-local/auction-manager/src/address.cpp /Users/leleo/Documents/prog 3/auction-manager-local/auction-manager/src/client.cpp client-test.cpp #FIXME: FILE NAMES RAVE CHANGED AND PATHS ALSO CHANGED
+path_ = /Users/leleo/Documents/prog-3/auction-manager-local/auction-manager/
 
-client-test-1st:
-	g++ $(src) -o client-test -Iheaders -std=c++17 -Wall -Wextra -Werror -Wshadow -Wconversion -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wmissing-declarations -Wmissing-include-dirs  -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wsign-conversion -Wsign-promo  -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused
-client-test: clean-client-test
-	g++ $(src) -o client-test -std=c++17 -std=c++17 -Wall -Wextra -Werror -Wshadow -Wconversion -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self  -Wmissing-declarations -Wmissing-include-dirs  -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wsign-conversion -Wsign-promo  -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused
-debug-client-test: clean-client-test
-        g++ -g $(src) -o client-test -std=c++17 -Wall -Wextra -Werror -Wshadow -Wconversion -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self  -Wmissing-declarations -Wmissing-include-dirs  -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wsign-conversion -Wsign-promo  -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused
-run-client-test: client-test
-	./client-test
-clean-client-test:
-ifeq ($(client-test),"")
-	rm client-test
+src = $(path_)src/address.cpp $(path_)src/register.cpp $(path_)src/account.cpp $(path_)src/buyer_register.cpp buyer_register_test.cpp
+
+tags = -std=c++17 -Wall -Wextra -Werror -Wshadow -Wconversion -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wmissing-declarations -Wmissing-include-dirs  -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wsign-conversion -Wsign-promo  -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused
+
+test-1st:
+	g++ $(src) -o test -I$(path_)headers $(tags)
+test: clean-test
+	g++ $(src) -o test -I$(path_)headers $(tags)
+debug-test: clean-test
+	g++ -g $(src) -o test $(tags) -g
+run-test: test
+	./test
+clean-test:
+ifeq ($(test),"")
+	rm test
 endif
-ifeq ($(client-test-output.txt),"")
-	rm client-test-output.txt
+ifeq ($(test-output.txt),"")
+	rm test-output.txt
 endif
-test-client-test: client-test
-	./client-test > client-test-output.txt
-	diff client-test-correct.txt client-test-output.txt
+test-test: test
+	./test > test-output.txt
+	diff brt.txt test-output.txt > diff-resuts.txt
 
